@@ -31,6 +31,9 @@
     
     [questions addObject:@"What is my middle name?"];
     [answers addObject:@"I'll never tell you!"];
+    
+    [questions addObject:@"What is my favorite color?"];
+    [answers addObject:@"It was rainbow, then my gf dumped me, now its black"];
 }
 
 - (IBAction)showQuestion:(id)sender {
