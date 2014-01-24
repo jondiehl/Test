@@ -43,8 +43,8 @@
         currentQuestionIndex=0;
     }
     
-    NSString *question = [questions objectAtIndex:currentQuestionIndex];
-    [self.questionLabel setText:question];
+    //NSString *question = [questions objectAtIndex:currentQuestionIndex];
+    [self.questionLabel setText:[questions objectAtIndex:currentQuestionIndex]];
 }
 
 - (IBAction)showAnswer:(id)sender {
