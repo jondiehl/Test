@@ -18,27 +18,33 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewDidUnload
-{
-    [self setQuestionLabel:nil];
-    [self setAnswerLabel:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    questions = [[NSMutableArray alloc] init];
+    answers = [[NSMutableArray alloc] init];
+    currentQuestionIndex=0;
+    
+    //add questions and answers to arrays
+    [questions addObject:@"What is 7 + 7?"];
+    [answers addObject:@"14"];
+    
+    [questions addObject:@"What is the capital of Pennsylvania?"];
+    [answers addObject:@"Harrisburg"];
+    
+    [questions addObject:@"What is my middle name?"];
+    [answers addObject:@"I'll never tell you!"];
 }
 
 - (IBAction)showQuestion:(id)sender {
+    currentQuestionIndex++;
     
+    if(currentQuestionIndex == [questions count]){
+        currentQuestionIndex=0;
+    }
+    
+    NSString *question = [questions objectAtIndex:currentQuestionIndex];
+    [self.questionLabel setText:question];
 }
 
 - (IBAction)showAnswer:(id)sender {
+    [self.answerLabel setText:[answers objectAtIndex:currentQuestionIndex]];
 }
 @end

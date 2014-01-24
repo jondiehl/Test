@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    int currentQuestionIndex;
+    
+    NSMutableArray *questions;
+    NSMutableArray *answers;
+}
+
+
 - (IBAction)showQuestion:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 - (IBAction)showAnswer:(id)sender;
